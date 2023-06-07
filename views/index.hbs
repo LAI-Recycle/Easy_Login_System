@@ -1,18 +1,25 @@
-<div class="container text-center ">
-  <div>
-    <h1>Account Login</h1>
-  </div>
-  <form action="" >
-    <div class="input-group mb-3">
-      <input type="email" class="form-control" placeholder="Email" aria-describedby="basic-addon1" name="Email"
-        required="required">
+<div class="position-absolute top-50 start-50 translate-middle">
+  <div class="text-center">
+    <div>
+      <h1>Account Login</h1>
     </div>
-    
-    <div class="input-group mb-3">
-      <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon1" name="password"
-        required="required">
-    </div>
+    <form method="POST" action="/login" >
+      <div class="input-group mb-3">
+        <input type="email" class="form-control" placeholder="Email"  name="Email" required="required" value="{{Emailunexist}}">
+      </div>
+      
+      <div class="input-group mb-3">
+        <input type="password" class="form-control" placeholder="Password" name="password" required="required">
+      </div>
 
-    <button class="btn btn-outline-dark" type="submit">Sign in</button>
-  </form>
+      <div>
+        {{#if Emailunexist}}
+        <h5 class="text-danger">Username 或Password 錯誤</h5>
+        {{/if}}
+      </div>
+
+      <button class="btn btn-outline-dark" type="submit">Sign in</button>
+    </form>
+    
+  </div>
 </div>
